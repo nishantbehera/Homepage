@@ -23,7 +23,7 @@
         </nav>
         <div class="header-text">
             <p>Research Scholar</p>
-            <h1>Hi, I'm Nishant Behera</h1>
+            <h1 id="typing-text"></h1>
         </div>
     </div>
 
@@ -181,6 +181,31 @@
     function closemenu(){
         sidemenu.style.right = "-200px";
     }
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const text = "Hi, I'm Nishant Behera";
+    const typingText = document.getElementById("typing-text");
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            typingText.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    window.onload = typeWriter;
 </script>
 
 </body>
